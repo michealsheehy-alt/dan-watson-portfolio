@@ -7,8 +7,10 @@ const featuredWork = [
     network: "ABC + Hulu",
     description:
       "Prime-time entertainment instincts translated into fast, platform-aware social storytelling.",
-    image: "/images/camera-operator.webp",
-    imagePosition: "center 32%",
+    image: "/images/credits/next-pro.webp",
+    imageAlt: "Promotional artwork for Dancing with the Stars: The Next Pro",
+    imagePosition: "center",
+    visual: "key-art",
     tone: "blue",
   },
   {
@@ -19,8 +21,10 @@ const featuredWork = [
     network: "Peacock",
     description:
       "Social-first production built around personality, cultural momentum and audience conversation.",
-    image: "/images/reality-set.webp",
+    image: "/images/credits/beyond-the-villa.webp",
+    imageAlt: "Beyond the Villa show logo",
     imagePosition: "center",
+    visual: "dark-logo",
     tone: "pink",
   },
   {
@@ -31,8 +35,10 @@ const featuredWork = [
     network: "ABC",
     description:
       "Character-led field storytelling shaped with warmth, pace and a clear eye for the memorable moment.",
-    image: "/images/camera-operator.webp",
-    imagePosition: "center 28%",
+    image: "/images/credits/american-idol.webp",
+    imageAlt: "Promotional artwork for American Idol",
+    imagePosition: "center",
+    visual: "key-art",
     tone: "yellow",
   },
   {
@@ -43,8 +49,10 @@ const featuredWork = [
     network: "CBS",
     description:
       "High-pressure multi-camera production, tracking evolving stories and making decisions at broadcast speed.",
-    image: "/images/reality-set.webp",
-    imagePosition: "68% center",
+    image: "/images/credits/love-island-usa.webp",
+    imageAlt: "Love Island USA show logo",
+    imagePosition: "center",
+    visual: "dark-logo",
     tone: "pink",
   },
   {
@@ -55,8 +63,10 @@ const featuredWork = [
     network: "Food Network",
     description:
       "Eight seasons balancing competition, comedy and the human beats that keep a returning format fresh.",
-    image: "/images/post-production.webp",
+    image: "/images/credits/worst-cooks.png",
+    imageAlt: "Worst Cooks in America show logo",
     imagePosition: "center",
+    visual: "worst-cooks",
     tone: "blue",
   },
   {
@@ -67,8 +77,10 @@ const featuredWork = [
     network: "Network 10 Australia",
     description:
       "A decade of timely entertainment, talent relationships and audience-first storytelling on nightly television.",
-    image: "/images/camera-operator.webp",
-    imagePosition: "center 24%",
+    image: "/images/credits/the-project.webp",
+    imageAlt: "The Project show logo",
+    imagePosition: "center",
+    visual: "the-project",
     tone: "yellow",
   },
 ];
@@ -230,9 +242,9 @@ export default function Home() {
         <div className="work-grid">
           {featuredWork.map((item) => (
             <article className={`work-card work-card-${item.tone}`} key={item.number}>
-              <div className="work-image">
+              <div className={`work-image work-visual-${item.visual}`}>
                 <img
-                  alt=""
+                  alt={item.imageAlt}
                   src={item.image}
                   style={{ objectPosition: item.imagePosition }}
                 />
@@ -250,6 +262,10 @@ export default function Home() {
             </article>
           ))}
         </div>
+        <p className="credit-art-note">
+          Show artwork and trademarks are the property of their respective
+          owners and are used solely to identify Dan&apos;s production credits.
+        </p>
       </section>
 
       <section className="impact-section">

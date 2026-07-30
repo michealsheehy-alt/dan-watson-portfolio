@@ -403,8 +403,43 @@ nav a:focus-visible::after {
   transition: transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.work-visual-dark-logo {
+  background: #050505;
+}
+
+.work-visual-dark-logo img {
+  object-fit: contain;
+}
+
+.work-visual-worst-cooks {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(240, 39, 54, 0.62), transparent 32%),
+    linear-gradient(140deg, #220006 0%, #71000d 52%, #190004 100%);
+}
+
+.work-visual-worst-cooks img {
+  padding: clamp(64px, 8vw, 112px);
+  object-fit: contain;
+}
+
+.work-visual-the-project {
+  background:
+    linear-gradient(135deg, rgba(153, 248, 255, 0.5), transparent 48%),
+    #f4fbfc;
+}
+
+.work-visual-the-project img {
+  padding: clamp(28px, 4vw, 58px);
+  object-fit: contain;
+}
+
 .work-card:hover .work-image img {
   transform: scale(1.035);
+}
+
+.work-card:hover .work-visual-worst-cooks img,
+.work-card:hover .work-visual-the-project img {
+  transform: scale(1.02);
 }
 
 .work-number,
@@ -473,6 +508,15 @@ nav a:focus-visible::after {
 .work-credit span {
   color: #666;
   font-size: 0.7rem;
+}
+
+.credit-art-note {
+  max-width: 760px;
+  margin: 108px auto 0;
+  color: #777;
+  font-size: 0.72rem;
+  line-height: 1.55;
+  text-align: center;
 }
 
 .impact-section {
@@ -940,6 +984,18 @@ footer > a:not(.wordmark) {
   .work-image,
   .work-image img {
     min-height: 320px;
+  }
+
+  .work-visual-worst-cooks img {
+    padding: 72px;
+  }
+
+  .work-visual-the-project img {
+    padding: 30px;
+  }
+
+  .credit-art-note {
+    margin-top: 18px;
   }
 
   .work-copy {
