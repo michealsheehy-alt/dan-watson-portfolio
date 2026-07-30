@@ -239,6 +239,39 @@ export default function Home() {
           </p>
         </div>
 
+        <article className="featured-clip">
+          <div className="featured-clip-copy">
+            <p className="featured-clip-label">Featured social production</p>
+            <h3>Daddy of Domains</h3>
+            <p className="featured-clip-lead">
+              Produced by Dan Watson for GoDaddy—a fast, character-led campaign
+              spot that found a huge audience.
+            </p>
+            <div className="featured-clip-proof">
+              <strong>2M+</strong>
+              <span>YouTube views and counting</span>
+            </div>
+            <a
+              className="featured-clip-link"
+              href="https://youtu.be/WuNFn4Zfv2U"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Watch on YouTube <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div className="featured-clip-video">
+            <iframe
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              src="https://www.youtube-nocookie.com/embed/WuNFn4Zfv2U?rel=0"
+              title="Daddy of Domains, produced by Dan Watson for GoDaddy"
+            />
+          </div>
+        </article>
+
         <div className="work-grid">
           {featuredWork.map((item) => (
             <article className={`work-card work-card-${item.tone}`} key={item.number}>
