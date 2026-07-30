@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Dan Watson | Reality TV & Social Content Producer",
   description:
-    "Dan Watson produces sharp, human reality television and social content built around real personalities and unforgettable moments.",
+    "Dan Watson is a Los Angeles TV and social media producer with 15+ years of credits spanning Love Island USA, American Idol, The Project, Beyond the Villa and more.",
   other: {
     "codex-preview": "development",
   },
