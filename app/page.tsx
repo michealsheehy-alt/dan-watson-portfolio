@@ -275,18 +275,19 @@ export default function Home() {
         <article className="featured-clip">
           <div className="featured-clip-copy">
             <p className="featured-clip-label">Featured social production</p>
-            <h3>Daddy of Domains</h3>
+            <h3>An original song. A family story.</h3>
             <p className="featured-clip-lead">
-              Produced by Dan Watson for GoDaddy—a fast, character-led campaign
-              spot that found a huge audience.
+              Produced by Dan Watson for Idols Global—an emotional,
+              character-led performance story that connected with a huge
+              audience.
             </p>
             <div className="featured-clip-proof">
-              <strong>2M+</strong>
+              <strong>1.5M+</strong>
               <span>YouTube views and counting</span>
             </div>
             <a
               className="featured-clip-link"
-              href="https://youtu.be/WuNFn4Zfv2U"
+              href="https://youtu.be/VecMTNiLRmk"
               rel="noreferrer"
               target="_blank"
             >
@@ -299,8 +300,8 @@ export default function Home() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
-              src="https://www.youtube-nocookie.com/embed/WuNFn4Zfv2U?rel=0"
-              title="Daddy of Domains, produced by Dan Watson for GoDaddy"
+              src="https://www.youtube-nocookie.com/embed/VecMTNiLRmk?rel=0"
+              title="Incredible singer writes an original song after his grandfather comes out as gay, produced by Dan Watson"
             />
           </div>
         </article>
@@ -311,7 +312,7 @@ export default function Home() {
             <h3>Conversations that travel.</h3>
           </div>
           <div className="reel-total">
-            <strong>2.8M</strong>
+            <strong>2.3M</strong>
             <span>combined YouTube views across the featured reel</span>
           </div>
         </div>
