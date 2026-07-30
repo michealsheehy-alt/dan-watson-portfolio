@@ -142,6 +142,39 @@ const strengths = [
   ["04", "Social strategy + platform-first production"],
 ];
 
+const producedClips = [
+  {
+    id: "_jWuYH7KLdo",
+    title: "Sarah Jessica Parker stops by The Project",
+    platform: "The Project",
+    views: "10K+ views",
+  },
+  {
+    id: "dK4q5r9MWmI",
+    title: "Brad Pitt on The Project",
+    platform: "The Project",
+    views: "11K+ views",
+  },
+  {
+    id: "2vm63ejhA3k",
+    title: "Katy Perry on The Project",
+    platform: "The Project",
+    views: "605K+ views",
+  },
+  {
+    id: "c9VAOYiMlyM",
+    title: "Will Ferrell on The Project",
+    platform: "The Project",
+    views: "94K+ views",
+  },
+  {
+    id: "68rbpyg1v-s",
+    title: "The Campaign: Julia Gillard meets Will Ferrell",
+    platform: "Warner Bros. / The Project",
+    views: "31K+ views",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -271,6 +304,50 @@ export default function Home() {
             />
           </div>
         </article>
+
+        <div className="produced-reel-heading">
+          <div>
+            <p className="eyebrow">More produced work</p>
+            <h3>Conversations that travel.</h3>
+          </div>
+          <div className="reel-total">
+            <strong>2.8M</strong>
+            <span>combined YouTube views across the featured reel</span>
+          </div>
+        </div>
+
+        <div className="produced-reel" aria-label="Additional clips produced by Dan Watson">
+          {producedClips.map((clip) => (
+            <a
+              className="reel-card"
+              href={`https://www.youtube.com/watch?v=${clip.id}`}
+              key={clip.id}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div className="reel-card-image">
+                <img
+                  alt={`Video thumbnail for ${clip.title}`}
+                  loading="lazy"
+                  src={`https://i.ytimg.com/vi/${clip.id}/hqdefault.jpg`}
+                />
+                <span className="reel-card-play" aria-hidden="true">
+                  ▶
+                </span>
+              </div>
+              <div className="reel-card-copy">
+                <div className="reel-card-meta">
+                  <span>{clip.platform}</span>
+                  <span>{clip.views}</span>
+                </div>
+                <h4>{clip.title}</h4>
+                <p>
+                  Produced by Dan Watson <span aria-hidden="true">↗</span>
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
 
         <div className="work-grid">
           {featuredWork.map((item) => (
