@@ -312,8 +312,8 @@ export default function Home() {
             <h3>Conversations that travel.</h3>
           </div>
           <div className="reel-total">
-            <strong>2.3M</strong>
-            <span>combined YouTube views across the featured reel</span>
+            <strong>3.8M</strong>
+            <span>combined views across YouTube and TikTok</span>
           </div>
         </div>
 
@@ -348,6 +348,33 @@ export default function Home() {
               </div>
             </a>
           ))}
+          <a
+            className="reel-card reel-card-tiktok"
+            href="https://www.tiktok.com/@officialdwts/video/7663179504210251039"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <div className="reel-card-image">
+              <img
+                alt="Dancing with the Stars: The Next Pro episode two fit check featuring Selena"
+                loading="lazy"
+                src="/images/reel/dwts-next-pro-tiktok.jpg"
+              />
+              <span className="reel-card-play" aria-hidden="true">
+                ▶
+              </span>
+            </div>
+            <div className="reel-card-copy">
+              <div className="reel-card-meta">
+                <span>DWTS: The Next Pro / TikTok</span>
+                <span>1.5M views</span>
+              </div>
+              <h4>Episode 2 fit check: Selena</h4>
+              <p>
+                Produced by Dan Watson <span aria-hidden="true">↗</span>
+              </p>
+            </div>
+          </a>
         </div>
 
         <div className="work-grid">

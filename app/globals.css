@@ -526,11 +526,6 @@ nav a:focus-visible::after {
   min-width: 0;
 }
 
-.reel-card:nth-child(4),
-.reel-card:nth-child(5) {
-  grid-column: span 3;
-}
-
 .reel-card-image {
   position: relative;
   overflow: hidden;
@@ -549,6 +544,10 @@ nav a:focus-visible::after {
   height: 100%;
   object-fit: cover;
   transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reel-card-tiktok .reel-card-image img {
+  object-position: center 18%;
 }
 
 .reel-card:hover .reel-card-image img,
@@ -1127,16 +1126,8 @@ footer > a:not(.wordmark) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .reel-card,
-  .reel-card:nth-child(4),
-  .reel-card:nth-child(5) {
+  .reel-card {
     grid-column: span 1;
-  }
-
-  .reel-card:last-child {
-    grid-column: 1 / -1;
-    max-width: calc(50% - 11px);
-    justify-self: center;
   }
 
   .impact-section,
@@ -1277,10 +1268,7 @@ footer > a:not(.wordmark) {
     margin-bottom: 86px;
   }
 
-  .reel-card,
-  .reel-card:nth-child(4),
-  .reel-card:nth-child(5),
-  .reel-card:last-child {
+  .reel-card {
     grid-column: 1;
     max-width: none;
   }
