@@ -293,7 +293,62 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="work-section" id="work">
+      <section
+        className="social-sensation"
+        id="work"
+        aria-labelledby="social-sensation-title"
+      >
+        <div className="social-sensation-heading">
+          <div>
+            <p className="eyebrow">DWTS: The Next Pro</p>
+            <h2 id="social-sensation-title">
+              Social Sensation.
+              <br />
+              <span>No Cap, These Popped Off!</span>
+            </h2>
+          </div>
+          <p className="social-sensation-intro">
+            Dan&apos;s most recent work was directing and producing all of the
+            BTS content for{" "}
+            <strong>Dancing with the Stars: The Next Pro</strong>, as seen on
+            ABC, Disney+ and Hulu.
+          </p>
+        </div>
+
+        <div
+          className="social-sensation-reel"
+          aria-label="Dancing with the Stars: The Next Pro social clips"
+        >
+          {tiktokClips.map((clip) => (
+            <a
+              className="reel-card reel-card-tiktok"
+              href={`https://www.tiktok.com/@officialdwts/video/${clip.id}`}
+              key={clip.id}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div className="reel-card-image">
+                <img alt={clip.imageAlt} loading="lazy" src={clip.image} />
+                <span className="reel-card-play" aria-hidden="true">
+                  ▶
+                </span>
+              </div>
+              <div className="reel-card-copy">
+                <div className="reel-card-meta">
+                  <span>DWTS: The Next Pro / TikTok</span>
+                  <span>{clip.views}</span>
+                </div>
+                <h4>{clip.title}</h4>
+                <p>
+                  Produced by Dan Watson <span aria-hidden="true">↗</span>
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="work-section">
         <div className="section-heading">
           <p className="eyebrow">Selected work</p>
           <h2>
@@ -347,8 +402,8 @@ export default function Home() {
             <h3>Conversations that travel.</h3>
           </div>
           <div className="reel-total">
-            <strong>9.8M+</strong>
-            <span>combined views across YouTube and TikTok</span>
+            <strong>2.3M+</strong>
+            <span>combined views across featured YouTube work</span>
           </div>
         </div>
 
@@ -374,32 +429,6 @@ export default function Home() {
               <div className="reel-card-copy">
                 <div className="reel-card-meta">
                   <span>{clip.platform}</span>
-                  <span>{clip.views}</span>
-                </div>
-                <h4>{clip.title}</h4>
-                <p>
-                  Produced by Dan Watson <span aria-hidden="true">↗</span>
-                </p>
-              </div>
-            </a>
-          ))}
-          {tiktokClips.map((clip) => (
-            <a
-              className="reel-card reel-card-tiktok"
-              href={`https://www.tiktok.com/@officialdwts/video/${clip.id}`}
-              key={clip.id}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <div className="reel-card-image">
-                <img alt={clip.imageAlt} loading="lazy" src={clip.image} />
-                <span className="reel-card-play" aria-hidden="true">
-                  ▶
-                </span>
-              </div>
-              <div className="reel-card-copy">
-                <div className="reel-card-meta">
-                  <span>DWTS: The Next Pro / TikTok</span>
                   <span>{clip.views}</span>
                 </div>
                 <h4>{clip.title}</h4>
