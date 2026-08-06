@@ -210,6 +210,65 @@ const tiktokClips = [
   },
 ];
 
+const instagramClips = [
+  {
+    code: "DMDIJAUt-Sk",
+    title: "Beyond the Villa is streaming now",
+    likes: "76.2K likes",
+    image: "/images/reel/beyond-the-villa-DMDIJAUt-Sk.jpg",
+    imageAlt: "Love Island USA cast promoting Beyond the Villa",
+  },
+  {
+    code: "DMtSu_PNE7d",
+    title: "Hot or Not: Rooftop pools? Situationships? First dates?",
+    likes: "67.8K likes",
+    image: "/images/reel/beyond-the-villa-DMtSu_PNE7d.jpg",
+    imageAlt: "Beyond the Villa cast playing Hot or Not",
+  },
+  {
+    code: "DN3xibuZAF1",
+    title: "Final tea drop of the season",
+    likes: "13.6K likes",
+    image: "/images/reel/beyond-the-villa-DN3xibuZAF1.jpg",
+    imageAlt: "Beyond the Villa cast sharing the final tea of the season",
+  },
+  {
+    code: "DM1BOveK1BU",
+    title: "Serving LA moves, moods, and unstoppable glow-ups",
+    likes: "9K likes",
+    image: "/images/reel/beyond-the-villa-DM1BOveK1BU.jpg",
+    imageAlt: "Beyond the Villa cast serving Los Angeles style and energy",
+  },
+  {
+    code: "DMLOlkzpMG_",
+    title: "Gym mornings. L.A. nights. Love in the air.",
+    likes: "60.3K likes",
+    image: "/images/reel/beyond-the-villa-DMLOlkzpMG_.jpg",
+    imageAlt: "Beyond the Villa cast member in a social campaign clip",
+  },
+  {
+    code: "DMLcUXEPgI2",
+    title: "Golden hour, good energy, and great taste",
+    likes: "18K likes",
+    image: "/images/reel/beyond-the-villa-DMLcUXEPgI2.jpg",
+    imageAlt: "Beyond the Villa cast member filmed at golden hour",
+  },
+  {
+    code: "DMLfp8oO5Me",
+    title: "Bright, bold, and booked all summer",
+    likes: "114.4K likes",
+    image: "/images/reel/beyond-the-villa-DMLfp8oO5Me.jpg",
+    imageAlt: "Beyond the Villa cast member in a bright summer social clip",
+  },
+  {
+    code: "DMLY3TqKgzz",
+    title: "Accent? Still hot. Vibes? Even better.",
+    likes: "38.1K likes",
+    image: "/images/reel/beyond-the-villa-DMLY3TqKgzz.jpg",
+    imageAlt: "Beyond the Villa cast member in a personality-led social clip",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -337,6 +396,66 @@ export default function Home() {
                 <div className="reel-card-meta">
                   <span>DWTS: The Next Pro / TikTok</span>
                   <span>{clip.views}</span>
+                </div>
+                <h4>{clip.title}</h4>
+                <p>
+                  Produced by Dan Watson <span aria-hidden="true">↗</span>
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+
+      <section
+        className="beyond-villa"
+        aria-labelledby="beyond-villa-title"
+        id="beyond-the-villa"
+      >
+        <div className="beyond-villa-heading">
+          <div>
+            <p className="eyebrow">Beyond the Villa · As seen on Peacock</p>
+            <h2 id="beyond-villa-title">Bombshell Boss!</h2>
+            <p className="beyond-villa-subhead">
+              The tea, straight from the cast of Love Island&apos;s Beyond the Villa.
+            </p>
+          </div>
+          <div className="beyond-villa-story">
+            <p>
+              As Senior Content Producer on <strong>Beyond the Villa</strong>, Dan
+              built the promos, shot the campaigns, and created the content that
+              got people hooked.
+            </p>
+            <blockquote>
+              “Years of knowing how to make people comfortable on camera meant
+              the cast opened up like I was one of them.”
+            </blockquote>
+          </div>
+        </div>
+
+        <div
+          className="beyond-villa-reel"
+          aria-label="Love Island's Beyond the Villa Instagram clips"
+        >
+          {instagramClips.map((clip) => (
+            <a
+              className="reel-card reel-card-instagram"
+              href={`https://www.instagram.com/p/${clip.code}/?hl=en`}
+              key={clip.code}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div className="reel-card-image">
+                <img alt={clip.imageAlt} loading="lazy" src={clip.image} />
+                <span className="reel-card-play" aria-hidden="true">
+                  ▶
+                </span>
+              </div>
+              <div className="reel-card-copy">
+                <div className="reel-card-meta">
+                  <span>Love Island USA / Instagram</span>
+                  <span>{clip.likes}</span>
                 </div>
                 <h4>{clip.title}</h4>
                 <p>

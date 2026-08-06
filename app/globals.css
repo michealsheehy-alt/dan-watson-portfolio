@@ -1483,3 +1483,137 @@ footer > a:not(.wordmark) {
     gap: 46px;
   }
 }
+
+.beyond-villa {
+  padding: clamp(82px, 9vw, 132px) clamp(24px, 4.4vw, 72px);
+  border-bottom: 2px solid var(--ink);
+  background: var(--pink);
+  color: var(--ink);
+}
+
+.beyond-villa-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: clamp(36px, 6vw, 96px);
+  align-items: end;
+  margin-bottom: 58px;
+}
+
+.beyond-villa .eyebrow {
+  display: inline-flex;
+  margin-bottom: 20px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--yellow);
+  padding: 10px 14px;
+}
+
+.beyond-villa h2 {
+  max-width: 920px;
+  margin: 0;
+  font-size: clamp(4.2rem, 8vw, 8.8rem);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  line-height: 0.84;
+}
+
+.beyond-villa-subhead {
+  max-width: 760px;
+  margin: 28px 0 0;
+  font-size: clamp(1.45rem, 2.4vw, 2.55rem);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.beyond-villa-story {
+  border: 2px solid var(--ink);
+  border-radius: 24px;
+  background: var(--blue);
+  box-shadow: 8px 9px 0 var(--yellow);
+  color: white;
+  padding: clamp(25px, 3vw, 42px);
+}
+
+.beyond-villa-story p {
+  margin: 0 0 22px;
+  font-size: 1.04rem;
+  line-height: 1.6;
+}
+
+.beyond-villa-story blockquote {
+  margin: 0;
+  color: var(--yellow);
+  font-size: clamp(1.35rem, 2vw, 2.1rem);
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.beyond-villa-reel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 48px 22px;
+}
+
+.beyond-villa .reel-card {
+  grid-column: span 1;
+  min-width: 0;
+}
+
+.beyond-villa .reel-card-image {
+  aspect-ratio: 9 / 16;
+  border-color: var(--ink);
+  box-shadow: 7px 8px 0 var(--blue);
+}
+
+.beyond-villa .reel-card:nth-child(even) .reel-card-image {
+  box-shadow: 7px 8px 0 var(--yellow);
+}
+
+.beyond-villa .reel-card-image img {
+  object-position: center;
+}
+
+.beyond-villa .reel-card-meta {
+  color: #44323a;
+}
+
+.beyond-villa .reel-card-meta span:last-child {
+  color: var(--blue);
+}
+
+.beyond-villa .reel-card h4 {
+  color: var(--ink);
+  font-size: clamp(1.25rem, 1.75vw, 1.95rem);
+}
+
+.beyond-villa .reel-card-copy p {
+  color: var(--ink);
+}
+
+@media (max-width: 1050px) {
+  .beyond-villa-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .beyond-villa-reel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .beyond-villa {
+    padding-top: 72px;
+    padding-bottom: 78px;
+  }
+
+  .beyond-villa h2 {
+    font-size: clamp(3.9rem, 18vw, 6.2rem);
+  }
+
+  .beyond-villa-reel {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+}
