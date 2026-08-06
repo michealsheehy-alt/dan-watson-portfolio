@@ -175,6 +175,41 @@ const producedClips = [
   },
 ];
 
+const tiktokClips = [
+  {
+    id: "7663179504210251039",
+    title: "Episode 2 fit check: Selena",
+    views: "1.5M views",
+    image: "/images/reel/dwts-next-pro-tiktok.jpg",
+    imageAlt:
+      "Dancing with the Stars: The Next Pro episode two fit check featuring Selena",
+  },
+  {
+    id: "7663173073230630174",
+    title: "Episode 2 vibe check: Stephani",
+    views: "2.7M views",
+    image: "/images/reel/dwts-routine-story-tiktok.jpg",
+    imageAlt:
+      "Dancing with the Stars: The Next Pro episode two vibe check featuring Stephani",
+  },
+  {
+    id: "7660316943714487582",
+    title: "Robert Irwin sets the stage",
+    views: "2.4M views",
+    image: "/images/reel/dwts-robert-irwin-tiktok.jpg",
+    imageAlt:
+      "Robert Irwin introduces Dancing with the Stars: The Next Pro",
+  },
+  {
+    id: "7660647261080128798",
+    title: "The search for the next pro begins",
+    views: "945K views",
+    image: "/images/reel/dwts-series-premiere-tiktok.jpg",
+    imageAlt:
+      "Dancing with the Stars: The Next Pro series premiere social video",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -245,7 +280,7 @@ export default function Home() {
           <span>years producing</span>
         </div>
         <div>
-          <strong>10M+</strong>
+          <strong>20M+</strong>
           <span>social views</span>
         </div>
         <div>
@@ -312,7 +347,7 @@ export default function Home() {
             <h3>Conversations that travel.</h3>
           </div>
           <div className="reel-total">
-            <strong>3.8M</strong>
+            <strong>9.8M+</strong>
             <span>combined views across YouTube and TikTok</span>
           </div>
         </div>
@@ -348,33 +383,32 @@ export default function Home() {
               </div>
             </a>
           ))}
-          <a
-            className="reel-card reel-card-tiktok"
-            href="https://www.tiktok.com/@officialdwts/video/7663179504210251039"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <div className="reel-card-image">
-              <img
-                alt="Dancing with the Stars: The Next Pro episode two fit check featuring Selena"
-                loading="lazy"
-                src="/images/reel/dwts-next-pro-tiktok.jpg"
-              />
-              <span className="reel-card-play" aria-hidden="true">
-                ▶
-              </span>
-            </div>
-            <div className="reel-card-copy">
-              <div className="reel-card-meta">
-                <span>DWTS: The Next Pro / TikTok</span>
-                <span>1.5M views</span>
+          {tiktokClips.map((clip) => (
+            <a
+              className="reel-card reel-card-tiktok"
+              href={`https://www.tiktok.com/@officialdwts/video/${clip.id}`}
+              key={clip.id}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div className="reel-card-image">
+                <img alt={clip.imageAlt} loading="lazy" src={clip.image} />
+                <span className="reel-card-play" aria-hidden="true">
+                  ▶
+                </span>
               </div>
-              <h4>Episode 2 fit check: Selena</h4>
-              <p>
-                Produced by Dan Watson <span aria-hidden="true">↗</span>
-              </p>
-            </div>
-          </a>
+              <div className="reel-card-copy">
+                <div className="reel-card-meta">
+                  <span>DWTS: The Next Pro / TikTok</span>
+                  <span>{clip.views}</span>
+                </div>
+                <h4>{clip.title}</h4>
+                <p>
+                  Produced by Dan Watson <span aria-hidden="true">↗</span>
+                </p>
+              </div>
+            </a>
+          ))}
         </div>
 
         <div className="work-grid">
