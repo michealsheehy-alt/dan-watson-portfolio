@@ -1427,6 +1427,10 @@ footer > a:not(.wordmark) {
   gap: 30px 22px;
 }
 
+.social-sensation .reel-card {
+  grid-column: span 1;
+}
+
 .social-sensation .reel-card-image {
   aspect-ratio: 3 / 4;
   border-color: white;
