@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -25,6 +24,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -32,11 +34,19 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Finalize DWTS TikTok cards
+        run: node scripts/finalize-tiktok-cards.mjs
+
+      - name: Commit polished cards and cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Polish new DWTS TikTok cards"
+          git push origin HEAD:main
+
       - name: Install dependencies
         run: npm ci
-
-      - name: Probe TikTok metadata
-        run: node scripts/probe-tiktok-metadata.mjs
 
       - name: Build static site
         run: npm run build:github-pages
