@@ -208,6 +208,34 @@ const tiktokClips = [
     imageAlt:
       "Dancing with the Stars: The Next Pro series premiere social video",
   },
+  {
+    id: "7675108230372085006",
+    title: "DWTS: The Next Pro social clip",
+    views: "New clip",
+    image: "/images/credits/next-pro.webp",
+    imageAlt: "Dancing with the Stars: The Next Pro TikTok clip",
+  },
+  {
+    id: "7677226421764263181",
+    title: "DWTS: The Next Pro social clip",
+    views: "New clip",
+    image: "/images/credits/next-pro.webp",
+    imageAlt: "Dancing with the Stars: The Next Pro TikTok clip",
+  },
+  {
+    id: "7665429077339213070",
+    title: "DWTS: The Next Pro social clip",
+    views: "New clip",
+    image: "/images/credits/next-pro.webp",
+    imageAlt: "Dancing with the Stars: The Next Pro TikTok clip",
+  },
+  {
+    id: "7670021280816549133",
+    title: "DWTS: The Next Pro social clip",
+    views: "New clip",
+    image: "/images/credits/next-pro.webp",
+    imageAlt: "Dancing with the Stars: The Next Pro TikTok clip",
+  },
 ];
 
 const instagramClips = [
@@ -288,11 +316,9 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">TV + social media producer</p>
           <h1>
-            Big stories.
+            Built for broadcast.
             <br />
-            Real people.
-            <br />
-            No dead air.
+            Bred for the feed.
           </h1>
           <p className="hero-intro">
             I&apos;m a Los Angeles–based producer with 15+ years shaping
@@ -321,8 +347,8 @@ export default function Home() {
           </figure>
           <figure className="media-card media-card-small">
             <img
-              alt="Editor and producer collaborating in post-production"
-              src="/images/post-production.webp"
+              alt="Male camera operator working on a television production"
+              src="/images/camera-operator.webp"
             />
           </figure>
         </div>
@@ -406,7 +432,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
 
       <section
         className="beyond-villa"
