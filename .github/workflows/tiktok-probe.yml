@@ -1,0 +1,22 @@
+name: TikTok Metadata Probe
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    if: startsWith(github.event.issue.title, '[tiktok-probe]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Probe TikTok metadata
+        run: node scripts/probe-tiktok-metadata.mjs
