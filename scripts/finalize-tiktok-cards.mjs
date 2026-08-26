@@ -24,6 +24,61 @@ const clips = [
   },
 ];
 
+const originalDeployWorkflow = `name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: \${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build:github-pages
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./out
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+`;
+
 const pagePath = "app/page.tsx";
 let page = await fs.readFile(pagePath, "utf8");
 const imageDir = "public/images/reel";
@@ -76,4 +131,6 @@ for (const file of [
   await fs.rm(file, { force: true });
 }
 
-console.log("Finalized four DWTS TikTok cards and removed temporary tooling.");
+await fs.writeFile(".github/workflows/deploy-pages.yml", originalDeployWorkflow, "utf8");
+
+console.log("Finalized four DWTS TikTok cards, restored normal Pages deployment, and removed temporary tooling.");
