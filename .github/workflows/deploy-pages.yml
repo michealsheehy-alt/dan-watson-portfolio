@@ -1,12 +1,13 @@
-name: Apply Dan homepage feedback
+name: Deploy GitHub Pages
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -15,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  update-and-deploy:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -27,62 +28,6 @@ jobs:
         with:
           ref: main
           fetch-depth: 1
-
-      - name: Apply Dan's two latest requests
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          page_path = Path('app/page.tsx')
-          page = page_path.read_text()
-
-          old_eyebrow = '<p className="eyebrow">TV + social media producer</p>'
-          new_eyebrow = '<p className="eyebrow hero-eyebrow">GLOBAL TV + social media producer</p>'
-          if old_eyebrow not in page:
-              raise SystemExit('Hero eyebrow source text not found')
-          page = page.replace(old_eyebrow, new_eyebrow, 1)
-
-          old_intro = '''          <p className="hero-intro">\n            I&apos;m a Los Angeles–based producer with 15+ years shaping\n            unscripted television, live entertainment and social content across\n            the US and Australia.\n          </p>'''
-          new_intro = '''          <div className="hero-intro-group">\n            <p className="hero-intro">\n              For 15+ years, Dan has been the industry&apos;s go-to talent whisperer,\n              in his element directing A-list icons like Kim Kardashian, Ariana\n              Grande, and Robert Irwin, top-tier influencers Charli D&apos;Amelio and\n              Leah Kateb, as he is guiding first-timers through their very first\n              take.\n            </p>\n            <p className="hero-intro">\n              From the sets of Love Island, American Idol, and Dancing with the\n              Stars to viral social campaigns for Peacock, ABC, and Hulu, Dan&apos;s\n              real superpower is instant trust: he reads people fast, calms the\n              nerves, and lands on the exact moment that makes audiences lean in.\n            </p>\n          </div>'''
-          if old_intro not in page:
-              raise SystemExit('Hero intro source text not found')
-          page = page.replace(old_intro, new_intro, 1)
-          page_path.write_text(page)
-
-          css_path = Path('app/globals.css')
-          css = css_path.read_text()
-          old_css = '''.hero-intro {\n  max-width: 420px;\n  margin: 32px 0 26px;\n  font-size: clamp(1.05rem, 1.5vw, 1.35rem);\n  line-height: 1.45;\n}'''
-          new_css = '''.hero-eyebrow {\n  font-size: 1rem;\n}\n\n.hero-intro-group {\n  max-width: 520px;\n  margin: 32px 0 26px;\n}\n\n.hero-intro {\n  margin: 0;\n  font-size: clamp(1rem, 1.3vw, 1.2rem);\n  line-height: 1.48;\n}\n\n.hero-intro + .hero-intro {\n  margin-top: 14px;\n}'''
-          if old_css not in css:
-              raise SystemExit('Hero intro CSS block not found')
-          css = css.replace(old_css, new_css, 1)
-          css_path.write_text(css)
-
-          static_path = Path('index.html')
-          static = static_path.read_text()
-          old_static_eyebrow = '<p class="eyebrow">TV + social media producer</p>'
-          new_static_eyebrow = '<p class="eyebrow hero-eyebrow">GLOBAL TV + social media producer</p>'
-          if old_static_eyebrow not in static:
-              raise SystemExit('Static hero eyebrow not found')
-          static = static.replace(old_static_eyebrow, new_static_eyebrow, 1)
-
-          old_static_intro = '<p class="hero-intro">I&#x27;m a Los Angeles–based producer with 15+ years shaping unscripted television, live entertainment and social content across the US and Australia.</p>'
-          new_static_intro = '<div class="hero-intro-group"><p class="hero-intro">For 15+ years, Dan has been the industry&#x27;s go-to talent whisperer, in his element directing A-list icons like Kim Kardashian, Ariana Grande, and Robert Irwin, top-tier influencers Charli D&#x27;Amelio and Leah Kateb, as he is guiding first-timers through their very first take.</p><p class="hero-intro">From the sets of Love Island, American Idol, and Dancing with the Stars to viral social campaigns for Peacock, ABC, and Hulu, Dan&#x27;s real superpower is instant trust: he reads people fast, calms the nerves, and lands on the exact moment that makes audiences lean in.</p></div>'
-          if old_static_intro not in static:
-              raise SystemExit('Static hero intro not found')
-          static = static.replace(old_static_intro, new_static_intro, 1)
-          static_path.write_text(static)
-          PY
-
-      - name: Commit source and static updates
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add app/page.tsx app/globals.css index.html
-          git commit -m "Apply Dan's latest homepage feedback"
-          git push origin HEAD:main
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
