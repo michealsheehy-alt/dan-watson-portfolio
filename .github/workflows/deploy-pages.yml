@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Probe TikTok metadata
+        run: node scripts/probe-tiktok-metadata.mjs
+
       - name: Build static site
         run: npm run build:github-pages
 
