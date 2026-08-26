@@ -133,11 +133,23 @@ nav a:focus-visible::after {
   line-height: 0.84;
 }
 
-.hero-intro {
-  max-width: 420px;
+.hero-eyebrow {
+  font-size: 1rem;
+}
+
+.hero-intro-group {
+  max-width: 520px;
   margin: 32px 0 26px;
-  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
-  line-height: 1.45;
+}
+
+.hero-intro {
+  margin: 0;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  line-height: 1.48;
+}
+
+.hero-intro + .hero-intro {
+  margin-top: 14px;
 }
 
 .button {

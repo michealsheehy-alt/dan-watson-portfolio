@@ -314,17 +314,27 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">TV + social media producer</p>
+          <p className="eyebrow hero-eyebrow">GLOBAL TV + social media producer</p>
           <h1>
             Built for broadcast.
             <br />
             Bred for the feed.
           </h1>
-          <p className="hero-intro">
-            I&apos;m a Los Angeles–based producer with 15+ years shaping
-            unscripted television, live entertainment and social content across
-            the US and Australia.
-          </p>
+          <div className="hero-intro-group">
+            <p className="hero-intro">
+              For 15+ years, Dan has been the industry&apos;s go-to talent whisperer,
+              in his element directing A-list icons like Kim Kardashian, Ariana
+              Grande, and Robert Irwin, top-tier influencers Charli D&apos;Amelio and
+              Leah Kateb, as he is guiding first-timers through their very first
+              take.
+            </p>
+            <p className="hero-intro">
+              From the sets of Love Island, American Idol, and Dancing with the
+              Stars to viral social campaigns for Peacock, ABC, and Hulu, Dan&apos;s
+              real superpower is instant trust: he reads people fast, calms the
+              nerves, and lands on the exact moment that makes audiences lean in.
+            </p>
+          </div>
           <a className="button button-dark" href="#work">
             Explore selected credits <span aria-hidden="true">↓</span>
           </a>
