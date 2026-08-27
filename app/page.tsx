@@ -316,9 +316,9 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow hero-eyebrow">GLOBAL TV + social media producer</p>
           <h1>
-            Built for broadcast.
+            Built in prime time.
             <br />
-            Bred for the feed.
+            Fluent in social!
           </h1>
           <div className="hero-intro-group">
             <p className="hero-intro">
