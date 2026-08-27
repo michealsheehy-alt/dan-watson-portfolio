@@ -315,18 +315,13 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow hero-eyebrow">GLOBAL TV + social media producer</p>
-          <h1>
-            Built in prime time.
-            <br />
-            Fluent in social!
-          </h1>
+          <h1>Built in prime time. Fluent in social.</h1>
           <div className="hero-intro-group">
             <p className="hero-intro">
               For 15+ years, Dan has been the industry&apos;s go-to talent whisperer,
-              in his element directing A-list icons like Kim Kardashian, Ariana
-              Grande, and Robert Irwin, top-tier influencers Charli D&apos;Amelio and
-              Leah Kateb, as he is guiding first-timers through their very first
-              take.
+              equally at home directing A-list icons like Kim Kardashian, Ariana
+              Grande, and Robert Irwin, working with top-tier influencer Leah
+              Kateb, or guiding first-timers through their very first take.
             </p>
             <p className="hero-intro">
               From the sets of Love Island, American Idol, and Dancing with the
@@ -340,7 +335,7 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="hero-media" aria-label="Dan Watson and scenes from production">
+        <div className="hero-media" aria-label="Dan Watson with television talent">
           <span className="shape shape-blue" />
           <span className="shape shape-pink" />
           <figure className="media-card media-card-portrait">
@@ -349,16 +344,16 @@ export default function Home() {
               src="/images/dan-watson.webp"
             />
           </figure>
-          <figure className="media-card media-card-wide">
+          <figure className="media-card media-card-talent">
             <img
-              alt="Reality television production filming an ensemble scene"
-              src="/images/reality-set.webp"
+              alt="Dan Watson with television talent on set"
+              src="/images/dan-with-talent.webp"
             />
           </figure>
-          <figure className="media-card media-card-small">
+          <figure className="media-card media-card-cast">
             <img
-              alt="Male camera operator working on a television production"
-              src="/images/camera-operator.webp"
+              alt="Dan Watson with the cast of Dancing with the Stars: The Next Pro"
+              src="/images/dan-with-next-pro-cast.webp"
             />
           </figure>
         </div>
