@@ -128,10 +128,9 @@ nav a:focus-visible::after {
 }
 
 .hero h1 {
-  max-width: none;
-  font-size: clamp(1.4rem, 2.2vw, 2.9rem);
-  line-height: 0.94;
-  white-space: nowrap;
+  max-width: 690px;
+  font-size: clamp(4.4rem, 6.8vw, 7.15rem);
+  line-height: 0.84;
 }
 
 .hero-eyebrow {
@@ -250,29 +249,27 @@ nav a:focus-visible::after {
 }
 
 .media-card-portrait {
-  top: 5%;
-  left: 2%;
-  z-index: 4;
-  width: 44%;
-  height: 78%;
+  top: 30px;
+  left: 7%;
+  width: 40%;
+  height: 68%;
   transform: rotate(-1deg);
 }
 
-.media-card-talent {
-  top: 2%;
-  right: 5%;
-  width: 34%;
-  height: 58%;
+.media-card-wide {
+  right: -1%;
+  bottom: 10%;
+  width: 65%;
+  height: 53%;
+  transform: rotate(0.5deg);
+}
+
+.media-card-small {
+  bottom: 5%;
+  left: 0;
+  width: 39%;
+  height: 34%;
   transform: rotate(1deg);
-}
-
-.media-card-cast {
-  right: 9%;
-  bottom: 2%;
-  z-index: 3;
-  width: 36%;
-  height: 60%;
-  transform: rotate(-1deg);
 }
 
 .card-play {
@@ -1121,7 +1118,7 @@ footer > a:not(.wordmark) {
   }
 
   .hero h1 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(4.4rem, 10.5vw, 7rem);
   }
 
   .section-heading {
@@ -1173,7 +1170,7 @@ footer > a:not(.wordmark) {
   }
 
   .hero h1 {
-    font-size: clamp(1.6rem, 4.5vw, 2rem);
+    font-size: clamp(3.55rem, 15.5vw, 5.2rem);
   }
 
   .hero-intro {
@@ -1202,18 +1199,17 @@ footer > a:not(.wordmark) {
   }
 
   .media-card-portrait {
-    left: 2%;
-    width: 44%;
+    left: 3%;
+    width: 43%;
   }
 
-  .media-card-talent {
-    right: 2%;
-    width: 35%;
+  .media-card-wide {
+    right: -3%;
+    width: 68%;
   }
 
-  .media-card-cast {
-    right: 7%;
-    width: 38%;
+  .media-card-small {
+    width: 42%;
   }
 
   .card-play {
@@ -1377,14 +1373,6 @@ footer > a:not(.wordmark) {
   }
 }
 
-@media (max-width: 560px) {
-  .hero h1 {
-    font-size: clamp(2.75rem, 12vw, 4rem);
-    line-height: 0.88;
-    white-space: normal;
-    text-wrap: balance;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   html {
