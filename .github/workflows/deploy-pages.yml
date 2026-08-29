@@ -1,22 +1,21 @@
-name: Deploy GitHub Pages
+name: Apply Dan latest hero feedback
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: dan-hero-feedback
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  update-and-deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -28,6 +27,73 @@ jobs:
         with:
           ref: main
           fetch-depth: 1
+
+      - name: Apply Dan hero feedback
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          page_path = Path('app/page.tsx')
+          page = page_path.read_text()
+
+          page = page.replace(
+              '          <h1>Built in prime time. Fluent in social.</h1>',
+              '          <h1>\n            Built in prime time.\n            <br />\n            Fluent in social.\n          </h1>',
+              1,
+          )
+
+          old_media = '''        <div className="hero-media" aria-label="Dan Watson with television talent">\n          <span className="shape shape-blue" />\n          <span className="shape shape-pink" />\n          <figure className="media-card media-card-portrait">\n            <img\n              alt="Portrait of television and social media producer Dan Watson"\n              src="/images/dan-watson.webp"\n            />\n          </figure>\n          <figure className="media-card media-card-talent">\n            <img\n              alt="Dan Watson with television talent on set"\n              src="/images/dan-with-talent.webp"\n            />\n          </figure>\n          <figure className="media-card media-card-cast">\n            <img\n              alt="Dan Watson with the cast of Dancing with the Stars: The Next Pro"\n              src="/images/dan-with-next-pro-cast.webp"\n            />\n          </figure>\n        </div>'''
+          new_media = '''        <div className="hero-media" aria-label="Dan Watson and scenes from production">\n          <span className="shape shape-blue" />\n          <span className="shape shape-pink" />\n          <figure className="media-card media-card-portrait">\n            <img\n              alt="Portrait of television and social media producer Dan Watson"\n              src="/images/dan-watson.webp"\n            />\n          </figure>\n          <figure className="media-card media-card-wide">\n            <img\n              alt="Reality television production filming an ensemble scene"\n              src="/images/reality-set.webp"\n            />\n          </figure>\n          <figure className="media-card media-card-small">\n            <img\n              alt="Male camera operator working on a television production"\n              src="/images/camera-operator.webp"\n            />\n          </figure>\n        </div>'''
+          if old_media in page:
+              page = page.replace(old_media, new_media, 1)
+          page_path.write_text(page)
+
+          css_path = Path('app/globals.css')
+          css = css_path.read_text()
+
+          css = css.replace(
+              '''.hero h1 {\n  max-width: none;\n  font-size: clamp(1.4rem, 2.2vw, 2.9rem);\n  line-height: 0.94;\n  white-space: nowrap;\n}''',
+              '''.hero h1 {\n  max-width: 690px;\n  font-size: clamp(4.4rem, 6.8vw, 7.15rem);\n  line-height: 0.84;\n}''',
+              1,
+          )
+
+          css = css.replace(
+              '''.media-card-portrait {\n  top: 5%;\n  left: 2%;\n  z-index: 4;\n  width: 44%;\n  height: 78%;\n  transform: rotate(-1deg);\n}\n\n.media-card-talent {\n  top: 2%;\n  right: 5%;\n  width: 34%;\n  height: 58%;\n  transform: rotate(1deg);\n}\n\n.media-card-cast {\n  right: 9%;\n  bottom: 2%;\n  z-index: 3;\n  width: 36%;\n  height: 60%;\n  transform: rotate(-1deg);\n}''',
+              '''.media-card-portrait {\n  top: 30px;\n  left: 7%;\n  width: 40%;\n  height: 68%;\n  transform: rotate(-1deg);\n}\n\n.media-card-wide {\n  right: -1%;\n  bottom: 10%;\n  width: 65%;\n  height: 53%;\n  transform: rotate(0.5deg);\n}\n\n.media-card-small {\n  bottom: 5%;\n  left: 0;\n  width: 39%;\n  height: 34%;\n  transform: rotate(1deg);\n}''',
+              1,
+          )
+
+          css = css.replace('font-size: clamp(1.75rem, 4vw, 2.5rem);', 'font-size: clamp(4.4rem, 10.5vw, 7rem);', 1)
+          css = css.replace('font-size: clamp(1.6rem, 4.5vw, 2rem);', 'font-size: clamp(3.55rem, 15.5vw, 5.2rem);', 1)
+
+          css = css.replace(
+              '''  .media-card-portrait {\n    left: 2%;\n    width: 44%;\n  }\n\n  .media-card-talent {\n    right: 2%;\n    width: 35%;\n  }\n\n  .media-card-cast {\n    right: 7%;\n    width: 38%;\n  }''',
+              '''  .media-card-portrait {\n    left: 3%;\n    width: 43%;\n  }\n\n  .media-card-wide {\n    right: -3%;\n    width: 68%;\n  }\n\n  .media-card-small {\n    width: 42%;\n  }''',
+              1,
+          )
+
+          css = css.replace(
+              '''\n@media (max-width: 560px) {\n  .hero h1 {\n    font-size: clamp(2.75rem, 12vw, 4rem);\n    line-height: 0.88;\n    white-space: normal;\n    text-wrap: balance;\n  }\n}\n''',
+              '\n',
+              1,
+          )
+
+          css_path.write_text(css)
+          PY
+
+      - name: Commit source changes if needed
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/page.tsx app/globals.css
+          if git diff --cached --quiet; then
+            echo "No source changes needed"
+          else
+            git commit -m "Restore Dan production hero layout"
+            git push origin HEAD:main
+          fi
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
