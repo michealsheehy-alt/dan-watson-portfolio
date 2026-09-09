@@ -1605,6 +1605,25 @@ footer > a:not(.wordmark) {
   color: var(--ink);
 }
 
+.man-on-the-street {
+  margin-top: clamp(76px, 9vw, 126px);
+  padding-top: clamp(48px, 6vw, 76px);
+  border-top: 2px solid var(--ink);
+}
+
+.man-on-the-street-heading {
+  max-width: 980px;
+  margin: 0 0 clamp(38px, 5vw, 62px);
+  font-size: clamp(2.7rem, 5.6vw, 6.2rem);
+  font-weight: 900;
+  letter-spacing: -0.065em;
+  line-height: 0.92;
+}
+
+.man-on-the-street-heading span {
+  color: var(--blue);
+}
+
 @media (max-width: 1050px) {
   .beyond-villa-heading {
     grid-template-columns: 1fr;

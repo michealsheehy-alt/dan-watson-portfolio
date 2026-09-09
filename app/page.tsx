@@ -297,6 +297,43 @@ const instagramClips = [
   },
 ];
 
+const manOnTheStreetClips = [
+  {
+    id: "7460733014331378990",
+    title: "The world is full of beautiful people",
+    views: "25.3K views",
+    image:
+      "/images/reel/man-on-the-street-7460733014331378990.jpg",
+    imageAlt: "Volunteer at the Santa Anita Racetrack donation pop-up",
+  },
+  {
+    id: "7460280833665010987",
+    title: "Amazing people supporting L.A.",
+    views: "5.8K views",
+    image:
+      "/images/reel/man-on-the-street-7460280833665010987.jpg",
+    imageAlt:
+      "Volunteer supporting Los Angeles fire relief at Santa Anita Racetrack",
+  },
+  {
+    id: "7460278347302473003",
+    title: "Good on ya, mate!",
+    views: "13.1K views",
+    image:
+      "/images/reel/man-on-the-street-7460278347302473003.jpg",
+    imageAlt: "Community volunteer at the Santa Anita Racetrack donation pop-up",
+  },
+  {
+    id: "7460755746263665963",
+    title: "A community showing up for Los Angeles",
+    views: "2.2K views",
+    image:
+      "/images/reel/man-on-the-street-7460755746263665963.jpg",
+    imageAlt:
+      "Volunteers supporting Los Angeles fire relief at Santa Anita Racetrack",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -498,6 +535,46 @@ export default function Home() {
               </div>
             </a>
           ))}
+        </div>
+
+        <div className="man-on-the-street" aria-labelledby="man-on-the-street-title">
+          <h3 className="man-on-the-street-heading" id="man-on-the-street-title">
+            Man on the Street:
+            <br />
+            <span>real people, human stories.</span>
+          </h3>
+
+          <div
+            className="beyond-villa-reel"
+            aria-label="Man on the Street TikTok clips"
+          >
+            {manOnTheStreetClips.map((clip) => (
+              <a
+                className="reel-card reel-card-tiktok"
+                href={`https://www.tiktok.com/@tastydan/video/${clip.id}`}
+                key={clip.id}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <div className="reel-card-image">
+                  <img alt={clip.imageAlt} loading="lazy" src={clip.image} />
+                  <span className="reel-card-play" aria-hidden="true">
+                    ▶
+                  </span>
+                </div>
+                <div className="reel-card-copy">
+                  <div className="reel-card-meta">
+                    <span>Man on the Street / TikTok</span>
+                    <span>{clip.views}</span>
+                  </div>
+                  <h4>{clip.title}</h4>
+                  <p>
+                    Produced by Dan Watson <span aria-hidden="true">↗</span>
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -29,5 +29,18 @@ test("renders development preview metadata", async () => {
     response.headers.get("content-type") ?? "",
     /^text\/html\b/i,
   );
-  assert.match(await response.text(), developmentPreviewMeta);
+  const html = await response.text();
+
+  assert.match(html, developmentPreviewMeta);
+  assert.match(html, /Man on the Street:/);
+  assert.match(html, /real people, human stories\./);
+
+  for (const videoId of [
+    "7460733014331378990",
+    "7460280833665010987",
+    "7460278347302473003",
+    "7460755746263665963",
+  ]) {
+    assert.match(html, new RegExp(videoId));
+  }
 });
