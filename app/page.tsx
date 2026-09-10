@@ -173,6 +173,12 @@ const producedClips = [
     platform: "Warner Bros. / The Project",
     views: "31K+ views",
   },
+  {
+    id: "SX8iBkgIPaw",
+    title: "Ariana Grande's first live Australian TV interview",
+    platform: "The Project",
+    views: "Watch interview",
+  },
 ];
 
 const tiktokClips = [
@@ -362,8 +368,9 @@ export default function Home() {
             <p className="hero-intro">
               For 15+ years, Dan has been the industry&apos;s go-to talent whisperer,
               equally at home directing A-list icons like Kim Kardashian, Ariana
-              Grande, and Robert Irwin, working with top-tier influencer Leah
-              Kateb, or guiding first-timers through their very first take.
+              Grande, Katy Perry, Brad Pitt, Will Ferrell, and Robert Irwin,
+              working with top-tier influencers like Leah Kateb and Kaylor
+              Martin, or guiding first-timers through their very first take.
             </p>
             <p className="hero-intro">
               From the sets of Love Island, American Idol, and Dancing with the
@@ -656,6 +663,36 @@ export default function Home() {
             <span>combined views across featured YouTube work</span>
           </div>
         </div>
+
+        <article className="project-profile">
+          <div className="project-profile-title">
+            <h4>Guest Producer, The Project (Network Ten) 10 seasons</h4>
+          </div>
+          <div className="project-profile-copy">
+            <p>
+              As Guest Producer on the multi-award-winning live nightly panel
+              show <em>The Project</em>, Dan secured, coordinated, and
+              produced over 1,000 high-profile interviews under the pressure of
+              live, nightly broadcast deadlines. Dan&apos;s role spanned talent
+              booking, pre-interview research, writing intros and questions,
+              and prepping talent, ensuring every segment landed with the pace,
+              wit, and polish the show is known for.
+            </p>
+            <p>
+              Dan&apos;s produced A-list Hollywood talent like Brad Pitt and Will
+              Ferrell, global pop icon Ariana Grande, media mogul Kim
+              Kardashian, and former Australian Prime Minister Julia Gillard,
+              reflecting a versatility across entertainment, pop culture, and
+              political interviews that few producers get to claim.
+            </p>
+            <p>
+              Thriving in a fast-paced, high-stakes live TV environment, Dan
+              built a reputation for delivering standout, headline-making
+              moments night after night, on one of Australia&apos;s most-watched
+              current affairs programs.
+            </p>
+          </div>
+        </article>
 
         <div className="produced-reel" aria-label="Additional clips produced by Dan Watson">
           {producedClips.map((clip) => (

@@ -526,6 +526,37 @@ nav a:focus-visible::after {
   text-transform: uppercase;
 }
 
+.project-profile {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(32px, 5vw, 76px);
+  margin: 0 0 62px;
+  padding: clamp(28px, 4vw, 54px);
+  border: 2px solid var(--ink);
+  border-radius: 24px;
+  background: var(--yellow);
+  box-shadow: 9px 10px 0 var(--blue);
+}
+
+.project-profile-title h4 {
+  margin: 0;
+  font-size: clamp(2rem, 3.5vw, 4rem);
+  font-weight: 850;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.project-profile-copy {
+  display: grid;
+  gap: 20px;
+}
+
+.project-profile-copy p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
 .produced-reel {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -922,9 +953,10 @@ nav a:focus-visible::after {
 }
 
 .credit-group ul {
+  display: grid;
+  gap: 14px;
   margin: 0;
   padding: 0;
-  border-top: 2px solid var(--ink);
   list-style: none;
 }
 
@@ -933,8 +965,33 @@ nav a:focus-visible::after {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 24px;
   align-items: start;
-  padding: 17px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 17px 18px;
+  border: 2px solid var(--ink);
+  border-radius: 15px;
+  background: var(--paper);
+  box-shadow: 4px 5px 0 var(--blue);
+  transition: box-shadow 220ms ease, transform 220ms ease;
+}
+
+.credit-group li:nth-child(3n + 2) {
+  box-shadow: 4px 5px 0 var(--pink);
+}
+
+.credit-group li:nth-child(3n) {
+  box-shadow: 4px 5px 0 var(--yellow);
+}
+
+.credit-group li:hover {
+  box-shadow: 7px 8px 0 var(--blue);
+  transform: translate(-3px, -3px);
+}
+
+.credit-group li:nth-child(3n + 2):hover {
+  box-shadow: 7px 8px 0 var(--pink);
+}
+
+.credit-group li:nth-child(3n):hover {
+  box-shadow: 7px 8px 0 var(--yellow);
 }
 
 .credit-group li div {
@@ -1267,6 +1324,14 @@ footer > a:not(.wordmark) {
   .produced-reel-heading {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  .project-profile {
+    grid-template-columns: 1fr;
+    margin-bottom: 54px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 7px 8px 0 var(--blue);
   }
 
   .reel-total {

@@ -33,6 +33,9 @@ test("renders development preview metadata", async () => {
 
   assert.match(html, developmentPreviewMeta);
   assert.match(html, /Man on the Street:/);
+  assert.match(html, /Guest Producer, The Project/);
+  assert.match(html, /SX8iBkgIPaw/);
+  assert.match(html, /Kaylor Martin/);
   assert.match(html, /real people, human stories\./);
 
   for (const videoId of [
