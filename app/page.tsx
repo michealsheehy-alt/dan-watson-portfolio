@@ -545,6 +545,25 @@ export default function Home() {
             <span>real people, human stories.</span>
           </h3>
 
+          <div className="man-on-the-street-intro">
+            <p>
+              There’s something about Dan’s energy that makes strangers stop,
+              open up and forget the camera is even there. In the space of a
+              passing conversation, he captures the laughs, the tears and the
+              truth.
+            </p>
+            <p>
+              With more than 15 years’ experience as a radio presenter,
+              television producer and social media director, Dan knows how to
+              turn a chance encounter on the street into an unforgettable
+              moment.
+            </p>
+            <p className="man-on-the-street-kicker">
+              Want to know what people are really thinking and feeling?{" "}
+              <strong>Ask Dan.</strong>
+            </p>
+          </div>
+
           <div
             className="beyond-villa-reel"
             aria-label="Man on the Street TikTok clips"
