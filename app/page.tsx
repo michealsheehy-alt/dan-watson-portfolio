@@ -243,8 +243,9 @@ const instagramClips = [
     code: "DMDIJAUt-Sk",
     title: "Beyond the Villa is streaming now",
     likes: "76.2K likes",
-    image: "/images/reel/beyond-the-villa-DMDIJAUt-Sk.jpg",
-    imageAlt: "Love Island USA cast promoting Beyond the Villa",
+    image:
+      "https://pbs.twimg.com/media/GvvSRTRbEAA2Wto?format=jpg&name=orig",
+    imageAlt: "Beyond the Villa cast member smiling in the first look",
   },
   {
     code: "DMtSu_PNE7d",
