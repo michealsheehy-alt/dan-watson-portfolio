@@ -183,6 +183,14 @@ const producedClips = [
 
 const tiktokClips = [
   {
+    id: "7660316943714487582",
+    title: "Robert Irwin sets the stage",
+    views: "2.4M views",
+    image: "/images/reel/dwts-robert-irwin-tiktok.jpg",
+    imageAlt:
+      "Robert Irwin introduces Dancing with the Stars: The Next Pro",
+  },
+  {
     id: "7663179504210251039",
     title: "Episode 2 fit check: Selena",
     views: "1.5M views",
@@ -197,14 +205,6 @@ const tiktokClips = [
     image: "/images/reel/dwts-routine-story-tiktok.jpg",
     imageAlt:
       "Dancing with the Stars: The Next Pro episode two vibe check featuring Stephani",
-  },
-  {
-    id: "7660316943714487582",
-    title: "Robert Irwin sets the stage",
-    views: "2.4M views",
-    image: "/images/reel/dwts-robert-irwin-tiktok.jpg",
-    imageAlt:
-      "Robert Irwin introduces Dancing with the Stars: The Next Pro",
   },
   {
     id: "7660647261080128798",
@@ -358,7 +358,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow hero-eyebrow">GLOBAL TV + social media producer</p>
+          <p className="eyebrow hero-eyebrow">Global TV + Social Media Creative</p>
           <h1>
             Built in prime time.
             <br />
@@ -367,10 +367,10 @@ export default function Home() {
           <div className="hero-intro-group">
             <p className="hero-intro">
               For 15+ years, Dan has been the industry&apos;s go-to talent whisperer,
-              equally at home directing A-list icons like Kim Kardashian, Ariana
+              equally at home producing A-list icons like Kim Kardashian, Ariana
               Grande, Katy Perry, Brad Pitt, Will Ferrell, and Robert Irwin,
-              working with top-tier influencers like Leah Kateb and Kaylor
-              Martin, or guiding first-timers through their very first take.
+              working with top-tier influencers like Leah Kateb and Charli
+              D&apos;Amelio, or guiding first-timers through their very first take.
             </p>
             <p className="hero-intro">
               From the sets of Love Island, American Idol, and Dancing with the
